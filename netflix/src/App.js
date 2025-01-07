@@ -21,7 +21,7 @@ function Layout () {
 function App() {
    return(
       <div className='App'>
-         <BrowserRouter>
+         <BrowserRouter basename='netflix'>
             <Routes> 
                {/* 레이아웃 적용 */}
                <Route path="/" element={<Layout />} >

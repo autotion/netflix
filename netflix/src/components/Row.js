@@ -5,7 +5,7 @@ import MovieModal from "./MovieModal"
 
 // <Row />에 들어있는 props(속성)를 가져옴
 // 영화정보 가져올 함수 실행 fetchMovieData()
-export default function Row({ islargeRow, title, id, fetchUrl}) {
+export default function Row({ isLargeRow, title, id, fetchUrl}) {
   const [movies, setMovies] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [movieSelected, setMovieSelected] = useState({})
@@ -46,9 +46,9 @@ export default function Row({ islargeRow, title, id, fetchUrl}) {
             <img 
               key={movie.id}
               onClick={()=> handleClick(movie)} // 클릭시 모달함수실행
-              className={`row__poster ${islargeRow && "row__posterLarge"}`}
+              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
               // isLargeRow가 적용되어 있으면 poster_path(큰거)아니면 backdrop_path(작은거)
-              src={`https://image.tmdb.org/t/p/original/${islargeRow ? movie.poster_path : movie.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
               loading="lazy"
               alt={movie.name}
               />
